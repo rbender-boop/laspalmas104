@@ -391,3 +391,11 @@ input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer;height:4px;
 .fill.prof{background:linear-gradient(90deg,var(--gold),var(--gold-lt))}
 .calc-out .fine{padding:0 4px}
 @media(max-width:900px){.calc{grid-template-columns:1fr}.calc-out{position:static}}
+
+/* ============ Drone showcase ============ */
+.drone-feature{margin-top:34px}
+.drone-feature img{width:100%;border-radius:5px;cursor:zoom-in;box-shadow:var(--shadow);display:block}
+.drone-rest{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+.drone-rest img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;cursor:zoom-in;box-shadow:var(--shadow-sm);transition:var(--t)}
+.drone-rest img:hover,.drone-feature img:hover{opacity:.93}
+@media(max-width:700px){.drone-rest{grid-template-columns:repeat(2,1fr)}}
