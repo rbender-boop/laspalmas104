@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy · Build · Sell — Interactive Returns Calculator | Las Palmas 104</title>
+<meta name="description" content="Model the buy-build-sell returns on Las Palmas 104. Adjust land price, build size, cost per m², soft costs, resale value and hold period to see profit, ROI and annualised return.">
+<link rel="canonical" href="https://www.laspalmas104.com/returns">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Buy · Build · Sell — Interactive Returns Calculator | Las Palmas 104">
+<meta property="og:description" content="Model the buy-build-sell returns on Las Palmas 104. Adjust land price, build size, cost per m², soft costs, resale value and hold period to see profit, ROI and annualised return.">
+<meta property="og:image" content="https://www.laspalmas104.com/images/gallery-11.jpg">
+<meta property="og:url" content="https://www.laspalmas104.com/returns">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/site.css">
+
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a class="nav-logo" href="index.html"><span class="t">Las Palmas 104</span><span class="s">Punta Espada · Cap Cana</span></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="the-lot.html">The Lot</a></li><li><a href="cap-cana.html">Cap Cana</a></li><li><a href="investment.html">Investment</a></li><li><a href="returns.html" class="active">Returns</a></li><li><a href="location.html">Location</a></li><li><a href="gallery.html">Gallery</a></li><li><a class="nav-cta" href="contact.html">Inquire</a></li></ul>
+  <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile" id="mobile"><button class="close" aria-label="Close">&times;</button><a href="index.html">Home</a><a href="the-lot.html">The Lot</a><a href="cap-cana.html">Cap Cana</a><a href="investment.html">Investment</a><a href="returns.html">Returns</a><a href="location.html">Location</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div>
+
+<header class="phero short" style="background-image:url('images/gallery-11.jpg')">
+  <div class="container"><p class="overline">Buy &middot; Build &middot; Sell</p><h1>Returns Calculator</h1><p class="lead">Adjust every assumption and watch the returns update live. The base case below reflects current figures for Las Palmas 104.</p></div>
+</header>
+
+<section class="sec reveal">
+  <div class="container">
+    <div class="calc">
+      <div class="calc-inputs">
+        <p class="overline">Your Assumptions</p>
+        <h2>Model the deal</h2>
+
+        <div class="fld">
+          <div class="fld-top"><label>Land purchase price</label><div class="num"><span>$</span><input type="number" id="b-land" value="1800000" step="50000"></div></div>
+          <input type="range" id="s-land" min="800000" max="3500000" step="50000" value="1800000">
+        </div>
+
+        <div class="fld">
+          <div class="fld-top"><label>Building size</label><div class="num sm"><input type="number" id="b-size" value="1500" step="50"><span class="suf">m&sup2;</span></div></div>
+          <input type="range" id="s-size" min="800" max="2500" step="50" value="1500">
+        </div>
+
+        <div class="fld">
+          <div class="fld-top"><label>Construction cost / m&sup2;</label><div class="num"><span>$</span><input type="number" id="b-cpm" value="1900" step="50"></div></div>
+          <input type="range" id="s-cpm" min="1000" max="3500" step="50" value="1900">
+        </div>
+
+        <div class="fld">
+          <div class="fld-top"><label>Soft costs</label><div class="num"><span>$</span><input type="number" id="b-soft" value="200000" step="25000"></div></div>
+          <input type="range" id="s-soft" min="0" max="800000" step="25000" value="200000">
+        </div>
+
+        <div class="fld">
+          <div class="fld-top"><label>Resale value</label><div class="num wide"><span>$</span><input type="number" id="b-resale" value="7500000" step="100000"></div></div>
+          <input type="range" id="s-resale" min="4000000" max="12000000" step="100000" value="7500000">
+        </div>
+
+        <div class="fld">
+          <div class="fld-top"><label>Hold period</label><div class="num sm"><input type="number" id="b-hold" value="2" step="1"><span class="suf">yrs</span></div></div>
+          <input type="range" id="s-hold" min="1" max="6" step="1" value="2">
+        </div>
+
+        <div class="fld">
+          <div class="fld-top"><label>Selling &amp; closing costs <span class="opt">(optional)</span></label><div class="num sm"><input type="number" id="b-sell" value="0" step="0.5"><span class="suf">%</span></div></div>
+          <input type="range" id="s-sell" min="0" max="8" step="0.5" value="0">
+        </div>
+
+        <button class="btn ghost" id="reset" type="button">Reset to base case</button>
+      </div>
+
+      <div class="calc-out">
+        <div class="rhero">
+          <span class="overline">Projected profit</span>
+          <div class="big" id="o-profit">$2,650,000</div>
+          <div class="rsub"><b id="o-roi">54.6%</b> total ROI &middot; <b id="o-ann">24.3%</b>/yr &middot; <b id="o-mult">1.55&times;</b> equity</div>
+        </div>
+        <div class="bd">
+          <div class="bd-row"><span>Land purchase</span><span id="o-land">$1,800,000</span></div>
+          <div class="bd-row"><span>Construction (<span id="o-size">1,500</span> m&sup2; &times; <span id="o-cpm">$1,900</span>)</span><span id="o-constr">$2,850,000</span></div>
+          <div class="bd-row"><span>Soft costs</span><span id="o-soft">$200,000</span></div>
+          <div class="bd-row total"><span>Total invested</span><span id="o-allin">$4,850,000</span></div>
+          <div class="bd-row"><span>Resale value</span><span id="o-resale">$7,500,000</span></div>
+          <div class="bd-row" id="row-sell" style="display:none"><span>Selling costs (<span id="o-sellp">0</span>%)</span><span id="o-sell">$0</span></div>
+          <div class="bd-row profit"><span>Profit after <span id="o-hold">2</span> yrs</span><span id="o-profit2">$2,650,000</span></div>
+        </div>
+        <div class="bars">
+          <div class="bar"><span class="bl">Invested</span><div class="track"><div class="fill inv" id="bar-inv"></div></div></div>
+          <div class="bar"><span class="bl">Resale</span><div class="track"><div class="fill res" id="bar-res"></div><div class="fill prof" id="bar-prof"></div></div></div>
+        </div>
+        <p class="fine">Annualised return compounds the equity multiple over the hold period. Figures exclude financing, carrying costs and taxes unless you fold them into soft or selling costs.</p>
+      </div>
+    </div>
+
+    <div class="disc" style="margin-top:34px">
+      <h4>Important disclaimer</h4>
+      <p>This calculator is an illustrative planning tool. Inputs and the base-case resale figure are estimates provided for discussion and are not appraisals, forecasts or guarantees. Construction costs, timelines and market values vary. This is not investment, tax or legal advice. Conduct your own due diligence and consult qualified professionals before purchasing.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band reveal">
+  <div class="container"><h2>Like what the numbers show?</h2><p>Request pricing, the survey and the full information package.</p><a class="btn" href="contact.html">Inquire Now</a></div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="brand"><span class="t">Las Palmas 104</span><br><span class="s">Punta Espada · Cap Cana · Dominican Republic</span>
+        <p>A rare 3,004 m² estate lot on Punta Espada with permanent, unobstructed 270° views — the adjacent parcel is Cap Cana-owned and cannot be built on.</p></div>
+      <div><h4>Explore</h4><a href="the-lot.html">The Lot</a><br><a href="cap-cana.html">Cap Cana &amp; Growth</a><br><a href="investment.html">Investment Case</a><br><a href="location.html">Location &amp; Map</a><br><a href="gallery.html">Gallery</a></div>
+      <div><h4>Inquire</h4><a href="mailto:rob@espadavilla.com?subject=Las%20Palmas%20104%20inquiry">rob@espadavilla.com</a><br><a href="https://wa.me/17347556357" target="_blank" rel="noopener">WhatsApp +1 (734) 755-6357</a><br><a href="contact.html">Contact &amp; details</a></div>
+    </div>
+    <div class="foot-bot"><span>&copy; 2026 Las Palmas 104 · laspalmas104.com</span><span>Private sale · Punta Espada, Cap Cana</span></div>
+  </div>
+</footer>
+<div class="float-cta"><a href="contact.html">&#9993; Inquire</a></div>
+<script src="assets/js/site.js"></script>
+<script>
+(function(){
+  var keys=['land','size','cpm','soft','resale','hold','sell'];
+  var base={land:1800000,size:1500,cpm:1900,soft:200000,resale:7500000,hold:2,sell:0};
+  function box(k){return document.getElementById('b-'+k);}
+  function sld(k){return document.getElementById('s-'+k);}
+  function val(k){var v=parseFloat(box(k).value);return isNaN(v)?0:v;}
+  function money(n){return (n<0?'-$':'$')+Math.abs(Math.round(n)).toLocaleString('en-US');}
+  function pct(n){return (n*100).toFixed(1)+'%';}
+  function set(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
+  function calc(){
+    var land=val('land'),size=val('size'),cpm=val('cpm'),soft=val('soft'),resale=val('resale'),hold=val('hold'),sell=val('sell');
+    var constr=size*cpm, allIn=land+constr+soft, sellc=resale*sell/100, net=resale-sellc, profit=net-allIn;
+    var roi=allIn>0?profit/allIn:0, mult=allIn>0?net/allIn:0;
+    var ann=(allIn>0&&hold>0&&net>0)?Math.pow(net/allIn,1/hold)-1:0;
+    set('o-profit',money(profit)); set('o-profit2',money(profit));
+    set('o-roi',pct(roi)); set('o-ann',pct(ann)); set('o-mult',mult.toFixed(2)+'\u00d7');
+    set('o-land',money(land)); set('o-constr',money(constr)); set('o-soft',money(soft));
+    set('o-allin',money(allIn)); set('o-resale',money(resale)); set('o-sell',money(sellc));
+    set('o-size',Math.round(size).toLocaleString('en-US')); set('o-cpm',money(cpm));
+    set('o-sellp',(sell%1===0?sell:sell.toFixed(1))); set('o-hold',hold);
+    document.getElementById('o-profit').style.color = profit>=0 ? '' : '#c0392b';
+    document.getElementById('row-sell').style.display = sell>0 ? '' : 'none';
+    var mx=Math.max(allIn,net,1);
+    document.getElementById('bar-inv').style.width=(allIn/mx*100)+'%';
+    document.getElementById('bar-res').style.width=(Math.min(allIn,net)/mx*100)+'%';
+    document.getElementById('bar-prof').style.width=(Math.max(net-allIn,0)/mx*100)+'%';
+  }
+  keys.forEach(function(k){
+    var b=box(k),s=sld(k);
+    if(s)s.addEventListener('input',function(){b.value=s.value;calc();});
+    if(b)b.addEventListener('input',function(){var v=parseFloat(b.value);if(s&&!isNaN(v))s.value=v;calc();});
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    keys.forEach(function(k){box(k).value=base[k];if(sld(k))sld(k).value=base[k];});calc();
+  });
+  calc();
+})();
+</script>
+</body>
+</html>

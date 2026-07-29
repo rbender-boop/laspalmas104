@@ -344,3 +344,50 @@ h2.center{margin-bottom:14px}
 .hero-bg{background-size:cover;background-position:center;background-repeat:no-repeat}
 .phero{background-size:cover;background-position:center;background-repeat:no-repeat}
 .phero::before{background:linear-gradient(180deg,rgba(10,22,40,.55),rgba(10,22,40,.78)),radial-gradient(1200px 500px at 80% -10%,rgba(201,168,76,.20),transparent 60%)}
+
+/* ============ Returns calculator ============ */
+.calc{display:grid;grid-template-columns:minmax(0,430px) 1fr;gap:40px;align-items:start}
+.calc-inputs{background:#fff;border:1px solid var(--line);border-radius:6px;padding:30px 28px}
+.calc-inputs>.overline{display:block;margin-bottom:6px}
+.calc-inputs h2{font-size:1.8rem;margin-bottom:22px}
+.fld{margin-bottom:20px}
+.fld-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;gap:12px}
+.fld label{font-family:var(--f-sans);font-size:.82rem;font-weight:600;letter-spacing:.02em;color:var(--navy)}
+.fld label .opt{color:var(--gray);font-weight:500;font-size:.74rem}
+.num{display:inline-flex;align-items:center;gap:2px;font-family:var(--f-sans);background:var(--cream);border:1px solid var(--line);border-radius:4px;padding:4px 9px}
+.num>span{color:var(--gold-dk);font-weight:700;font-size:.9rem}
+.num input{width:100px;border:0;background:transparent;font-family:var(--f-sans);font-weight:700;font-size:.92rem;color:var(--navy);text-align:right;-moz-appearance:textfield}
+.num.wide input{width:112px}
+.num.sm input{width:50px}
+.num input:focus{outline:none}
+.num .suf{font-size:.76rem;color:var(--gray);font-weight:600;margin-left:2px}
+.num input::-webkit-outer-spin-button,.num input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer;height:4px;margin:0}
+#reset{margin-top:8px;font-size:.72rem;padding:12px 22px}
+
+.calc-out{position:sticky;top:88px}
+.rhero{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-radius:6px;padding:30px 32px;text-align:center;position:relative;overflow:hidden}
+.rhero::after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.30),transparent 70%)}
+.rhero .overline{color:var(--gold-lt);display:block;margin-bottom:8px;position:relative;z-index:2}
+.rhero .big{font-family:var(--f-display);font-size:clamp(2.4rem,5vw,3.4rem);color:#fff;line-height:1;position:relative;z-index:2}
+.rhero .rsub{font-family:var(--f-sans);font-size:.9rem;color:#cdd6df;margin-top:12px;position:relative;z-index:2}
+.rhero .rsub b{color:var(--gold-lt);font-weight:700}
+.bd{background:#fff;border:1px solid var(--line);border-radius:6px;margin-top:18px;overflow:hidden}
+.bd-row{display:flex;justify-content:space-between;gap:16px;padding:12px 22px;font-family:var(--f-sans);font-size:.92rem;border-bottom:1px solid var(--line)}
+.bd-row span:first-child{color:var(--gray)}
+.bd-row span:last-child{font-weight:600;color:var(--navy)}
+.bd-row.total{background:var(--cream)}
+.bd-row.total span{color:var(--navy);font-weight:700}
+.bd-row.profit{background:#faf4e2}
+.bd-row.profit span:last-child{color:var(--gold-dk);font-weight:800}
+.bd-row:last-child{border-bottom:0}
+.bars{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+.bar{display:flex;align-items:center;gap:12px}
+.bar .bl{flex:0 0 72px;font-family:var(--f-sans);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.track{flex:1;height:16px;background:#eef1f4;border-radius:100px;overflow:hidden;display:flex}
+.fill{height:100%;transition:width .25s ease}
+.fill.inv{background:var(--navy)}
+.fill.res{background:#5b6b7d}
+.fill.prof{background:linear-gradient(90deg,var(--gold),var(--gold-lt))}
+.calc-out .fine{padding:0 4px}
+@media(max-width:900px){.calc{grid-template-columns:1fr}.calc-out{position:static}}
