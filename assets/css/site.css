@@ -419,3 +419,32 @@ input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer;height:4px;
 
 .nav-video{color:var(--gold)!important;font-weight:600}
 .nav-video:hover{color:#fff!important}
+
+
+/* --- Growth timeline (2026 -> 2030) --- */
+.gtl{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:36px}
+.gtl-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:28px 26px;text-align:center}
+.gtl-card .yr{font-family:var(--f-sans);font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gray)}
+.gtl-card .keys{font-family:var(--f-display);font-size:clamp(2rem,4vw,3rem);color:var(--navy);line-height:1.1;margin-top:8px}
+.gtl-card.future .keys{color:var(--gold-dk)}
+.gtl-card .sub{font-family:var(--f-sans);font-size:.78rem;letter-spacing:.06em;color:var(--gray);margin-top:6px}
+.gtl-bar{height:14px;border-radius:100px;background:#eef1f4;overflow:hidden;margin-top:16px}
+.gtl-bar>span{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--navy),#27415e)}
+.gtl-card.future .gtl-bar>span{background:linear-gradient(90deg,var(--gold),var(--gold-lt))}
+.gtl-note{grid-column:1/-1;text-align:center;font-family:var(--f-sans);font-size:.9rem;color:#4a5560;margin-top:2px}
+.gtl-note b{color:var(--gold-dk)}
+@media(max-width:700px){.gtl{grid-template-columns:1fr}}
+
+/* --- Peer comparison rows --- */
+.peers{margin-top:36px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+.peer{display:grid;grid-template-columns:minmax(150px,240px) 1fr minmax(90px,auto);align-items:center;gap:14px;padding:16px 22px;border-bottom:1px solid var(--line)}
+.peer:last-child{border-bottom:0}
+.peer.lead{background:#faf4e2}
+.peer .who{font-family:var(--f-sans);font-weight:600;font-size:.9rem;color:var(--navy)}
+.peer .who small{display:block;font-weight:500;font-size:.72rem;color:var(--gray);margin-top:2px}
+.peer .ptrack{height:12px;border-radius:100px;background:#eef1f4;overflow:hidden}
+.peer .ptrack>span{display:block;height:100%;border-radius:100px;background:#5b6b7d}
+.peer.lead .ptrack>span{background:linear-gradient(90deg,var(--gold),var(--gold-lt))}
+.peer .val{font-family:var(--f-display);font-size:1.25rem;color:var(--navy);text-align:right;white-space:nowrap}
+.peer.lead .val{color:var(--gold-dk);font-weight:700}
+@media(max-width:640px){.peer{grid-template-columns:1fr auto}.peer .ptrack{display:none}}
