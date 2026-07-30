@@ -404,11 +404,18 @@ input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer;height:4px;
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 
-/* --- Prominent inline video --- */
+/* --- Prominent inline video band (self-contained dark section) --- */
 .videofeat{background:linear-gradient(135deg,var(--navy),var(--navy-2))}
-.vframe{max-width:1040px;margin:28px auto 0;border-radius:6px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.45);border:1px solid rgba(201,168,76,.35)}
-.vframe video{width:100%;height:auto;display:block}
+.videofeat .overline{color:var(--gold-lt)}
+.videofeat h2{color:#fff}
+.videofeat p{color:#cdd6df}
+.videofeat .vnote{color:#9fb0c0}
+.videofeat a{color:var(--gold-lt)}
+.videofeat a:hover{color:#fff}
 .vnote{margin-top:14px;font-size:.8rem}
+/* dedicated player wrapper (separate from .vframe used by YouTube iframes) */
+.vplayer{max-width:1040px;margin:28px auto 0;border-radius:6px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.45);border:1px solid rgba(201,168,76,.35)}
+.vplayer video{width:100%;height:auto;display:block}
 
 .nav-video{color:var(--gold)!important;font-weight:600}
 .nav-video:hover{color:#fff!important}
